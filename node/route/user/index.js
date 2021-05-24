@@ -22,7 +22,7 @@ router.post('/',function(req, res) {
             // const param=JSON.stringify({status:400,message:'不存在该账号'})
             // res.send(param)
             // res.end()
-            // console.log(222)
+            // console.log(data)
             if(data.length!==0){
                 if(req.body.password==data[0].password){
                     const param=JSON.stringify({status:200,message:'success'})
