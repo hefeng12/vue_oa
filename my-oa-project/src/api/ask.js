@@ -8,13 +8,11 @@ import baseApi from './api'
 // axios.defaults.baseURL=baseURL
 
 const instance = axios.create({
-    // baseURL:'/api',
-    timeout: 30*1000,
-    headers: {
-        'content-type': 'application/json;charset=UTF-8'
-    }
+    baseURL:'/api',
+    timeout: 30*1000
   });
-//   axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
+// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
+instance.defaults.headers.post['Content-Type']='application/json;charset=UTF-8';
 instance.interceptors.request.use(    
     config => {        
         // 每次发送请求之前判断vuex中是否存在token        
