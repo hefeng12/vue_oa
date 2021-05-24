@@ -1,8 +1,10 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <router-link :to="{path:'/home',query:{message:'hello,son'}}"></router-link>
-  <router-view :msg='msg1'></router-view>
+  <div>
+    <router-link :to="'/home'">home</router-link>
+    <router-view :msg='msg1'></router-view>
+  </div>
 </template>
 
 <script>

@@ -36,6 +36,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+import {post} from '../../api/ask'
 export default defineComponent({
     name:'Login',
     data(){
@@ -60,19 +61,21 @@ export default defineComponent({
                 name:this.account,
                 password:this.pass
             }
-            params=JSON.stringify(params)
-            fetch('http://localhost:3000/login',{
-                method:'post',
-                body:params,
-                headers: {
-                    'Accept':'application/json',
-                    'Content-Type':'application/json',
-                    },
-                mode: 'cors',
-            }).then(res=>{
+            // fetch('http://localhost:3000/login',{
+            //     method:'post',
+            //     body:params,
+            //     headers: {
+            //         'Accept':'application/json',
+            //         'Content-Type':'application/json',
+            //         },
+            //     mode: 'cors',
+            // }).then(res=>{
+            //     console.log(res)
+            // },rej=>{
+            //     console.log(rej)
+            // })
+            post('login',params).then(res=>{
                 console.log(res)
-            },rej=>{
-                console.log(rej)
             })
         }
     },
