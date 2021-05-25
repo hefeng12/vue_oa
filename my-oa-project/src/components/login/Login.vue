@@ -36,7 +36,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import {post} from '../../api/ask'
+import ask from '../../api/ask'
 export default defineComponent({
     name:'Login',
     data(){
@@ -74,7 +74,7 @@ export default defineComponent({
             // },rej=>{
             //     console.log(rej)
             // })
-            post('login',params).then(res=>{
+            ask('login',params).then(res=>{
                 console.log(res)
             })
         }

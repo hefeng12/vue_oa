@@ -1,5 +1,8 @@
 const baseApi={
-    login:'api/login'
+    login:{
+        method:'post',
+        url:'api/login'
+    }
 }
 
 export default baseApi
